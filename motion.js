@@ -1,5 +1,5 @@
-locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
-locOrientation('portrait');
+/*locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
+locOrientation('portrait');*/
 window.addEventListener("deviceorientation", get_orientation, true);
 var sen_y, sen_z, st_y, st_z, start=true;
 

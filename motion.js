@@ -1,4 +1,4 @@
-lockedAllowed = window.screen.lockOrientation(orientation);
+lockedAllowed = window.screen.lockOrientation("portrait");
 window.addEventListener("deviceorientation", get_orientation, true);
 var sen_x, sen_y, sen_z, sen_a;
 

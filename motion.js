@@ -1,14 +1,14 @@
-let sensor=new Accelerometer();
-var sen_x, sen_y, sen_z;
-sensor.start();
+window.addEventListener("deviceorientation", get_orientation, true);
+var sen_x, sen_y, sen_z, sen_a;
 
-sensor.onreading = () => {
-    sen_x=("Acceleration along X-axis: " + sensor.x);
-    sen_y=("Acceleration along Y-axis: " + sensor.y);
-    sen_z=("Acceleration along Z-axis: " + sensor.z);
-    $("x_val").text(sen_x);
-    $("y_val").text(sen_y);
-    $("z_val").text(sen_z);
+function get_orientation(event){
+  sen_x=event.alpha;
+  sen_y=event.beta;
+  sen_z=event.gamma;
+  sen_a=event.absolute;
+  $("#x_val").text(sen_x);
+  $("#y_val").text(sen_y);
+  $("#z_val").text(sen_z);
+  $("#error").text(sen_a);
+
 }
-
-sensor.onerror = event => console.log(event.error.name, event.error.message);
